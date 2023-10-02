@@ -113,33 +113,31 @@ if (!empty($mostRecent['file'])) {
     </div>
     <div class="archive">
     <?php
-function getMostRecentFiles($dir, $count = 5) {
-    $files = scandir($dir);
-    $recentFiles = [];
+    
+    function getMostRecentFiles($dir) {
+  $files = scandir($dir);
+  $recentFiles = [];
 
-    foreach ($files as $file) {
-        if ($file != '.' && $file != '..') {
-            $filePath = $dir . '/' . $file;
+  foreach ($files as $file) {
+      if ($file != '.' && $file != '..') {
+          $filePath = $dir . '/' . $file;
 
-            if (is_dir($filePath)) {
-                $subDirRecentFiles = getMostRecentFiles($filePath, $count);
-                $recentFiles = array_merge($recentFiles, $subDirRecentFiles);
-            } else {
-                $fileTimestamp = filemtime($filePath);
-                $recentFiles[] = ['file' => $filePath, 'timestamp' => $fileTimestamp];
-            }
-        }
-    }
+          if (is_dir($filePath)) {
+              $subDirRecentFiles = getMostRecentFiles($filePath);
+              $recentFiles = array_merge($recentFiles, $subDirRecentFiles);
+          } else {
+              $fileTimestamp = filemtime($filePath);
+              $recentFiles[] = ['file' => $filePath, 'timestamp' => $fileTimestamp];
+          }
+      }
+  }
 
-    // Sort the files by timestamp in descending order
-    usort($recentFiles, function($a, $b) {
-        return $b['timestamp'] - $a['timestamp'];
-    });
+  // Sort the files by timestamp in descending order
+  usort($recentFiles, function($a, $b) {
+      return $b['timestamp'] - $a['timestamp'];
+  });
 
-    // Take the top $count files
-    $recentFiles = array_slice($recentFiles, 0, $count);
-
-    return $recentFiles;
+  return $recentFiles;
 }
 
 $folder = 'repacks/';
