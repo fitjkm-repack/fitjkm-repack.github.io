@@ -46,6 +46,10 @@
         margin-left: 20px;
       }
 
+      li {
+        list-style: none;
+      }
+
     </style>
   </head>
   <body>
