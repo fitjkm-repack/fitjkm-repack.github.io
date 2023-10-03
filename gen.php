@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap" rel="stylesheet">
     <style>
       * {
         margin: 0;
@@ -8,8 +9,8 @@
       }
 
       body {
-        font-family: Arial, Helvetica, sans-serif; 
-        background-color: #040206;
+        font-family: 'Ubuntu', sans-serif; 
+        background-color: #1c1a21;
       }
 
       .navbar {
@@ -40,15 +41,38 @@
       .desc {
         font-size: 20px;
       }
+      .descarch {
+        font-size: 14px;
+      }
 
       .archive {
         margin-top: 300px;
         margin-left: 20px;
       }
 
-      li {
-        list-style: none;
-      }
+      h1 {
+        background: linear-gradient(to right, #6846bc 20%, #00aa8d 40%, #00aa8d 60%, #6846bc 80%);
+        background-size: 200% auto;
+  
+        color: #000;
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      
+        animation: shine 5s linear infinite;
+    }
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+          }
+
+          li {
+            list-style: none;
+            font-size: 20px;
+            margin: 7px 0;
+          }
 
     </style>
   </head>
@@ -112,6 +136,7 @@ if (!empty($mostRecent['file'])) {
 ?>
     </div>
     <div class="archive">
+        <h2>Archive</h2>
     <?php
     
     function getMostRecentFiles($dir) {
@@ -157,7 +182,7 @@ if (!empty($recentFiles)) {
         // Assuming "DATA" is always the third part of the exploded string
         if (count($parts) >= 3) {
             $data = $parts[2];
-            echo "<span class='desc'>$lastModified - $data</span></li>"; // This will output "DATA"
+            echo "<span class='descarch'>$lastModified - $data</span></li>"; // This will output "DATA"
         } else {
             echo "DATA not found in the string.</li>";
         }
