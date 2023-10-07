@@ -79,7 +79,7 @@
   <body>
     <div class="navbar">
       <a href="#">FitJKM Repacks</a>
-      <img src="jkm.jpg" alt="jkm">
+      <img src="budgiesIA.jpeg" alt="jkm">
     </div>
     <div class="latest">
       <h1>LATEST REPACK!</h1>
