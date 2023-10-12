@@ -84,41 +84,49 @@
     <div class="latest">
       <h1>LATEST REPACK!</h1>
      <?php
-function getMostRecentFile($dir) {
-    $files = scandir($dir);
-    $maxTimestamp = 0;
-    $mostRecentFile = '';
+function getFileWithLargestNumber($dir) {
+  $files = scandir($dir);
+  $largestNumber = -1;
+  $fileWithLargestNumber = '';
 
-    foreach ($files as $file) {
-        if ($file != '.' && $file != '..') {
-            $filePath = $dir . '/' . $file;
+  foreach ($files as $file) {
+      if ($file != '.' && $file != '..') {
+          $filePath = $dir . '/' . $file;
 
-            if (is_dir($filePath)) {
-                $subDirMostRecentFile = getMostRecentFile($filePath);
-                if ($subDirMostRecentFile['timestamp'] > $maxTimestamp) {
-                    $maxTimestamp = $subDirMostRecentFile['timestamp'];
-                    $mostRecentFile = $subDirMostRecentFile['file'];
-                }
-            } else {
-                $fileTimestamp = filemtime($filePath);
-                if ($fileTimestamp > $maxTimestamp) {
-                    $maxTimestamp = $fileTimestamp;
-                    $mostRecentFile = $filePath;
-                }
-            }
-        }
-    }
+          if (is_dir($filePath)) {
+              $subDirLargestNumberFile = getFileWithLargestNumber($filePath);
+              $subDirLargestNumber = $subDirLargestNumberFile['number'];
+              if ($subDirLargestNumber > $largestNumber) {
+                  $largestNumber = $subDirLargestNumber;
+                  $fileWithLargestNumber = $subDirLargestNumberFile['file'];
+              }
+          } else {
+              $number = extractNumberFromFileName($file);
+              if ($number !== false && $number > $largestNumber) {
+                  $largestNumber = $number;
+                  $fileWithLargestNumber = $filePath;
+              }
+          }
+      }
+  }
 
-    return ['file' => $mostRecentFile, 'timestamp' => $maxTimestamp];
+  return ['file' => $fileWithLargestNumber, 'number' => $largestNumber];
+}
+
+function extractNumberFromFileName($fileName) {
+  $pattern = '/(\d+)/';
+  if (preg_match($pattern, $fileName, $matches)) {
+      return intval($matches[0]);
+  }
+  return false;
 }
 
 $folder = 'repacks/';
-$mostRecent = getMostRecentFile($folder);
+$mostRecent = getFileWithLargestNumber($folder);
 
 if (!empty($mostRecent['file'])) {
     $filename = basename($mostRecent['file']);
     $fileLink = $mostRecent['file'];
-    $lastModified = date('Y-m-d H:i:s', $mostRecent['timestamp']);
     
     echo "<a href=\"$fileLink\" target=\"_blank\">$filename</a><br>";
     $parts = explode("/", $fileLink);
@@ -126,7 +134,7 @@ if (!empty($mostRecent['file'])) {
     // Assuming "DATA" is always the third part of the exploded string
     if (count($parts) >= 3) {
         $data = $parts[2];
-        echo "<span class='desc'>$lastModified - $data</span>"; // This will output "DATA"
+        echo "<span class='desc'>$data</span>"; // This will output "DATA"
     } else {
         echo "DATA not found in the string.";
     }
@@ -139,58 +147,59 @@ if (!empty($mostRecent['file'])) {
         <h2>Archive</h2>
     <?php
     
-    function getMostRecentFiles($dir) {
-  $files = scandir($dir);
-  $recentFiles = [];
-
-  foreach ($files as $file) {
-      if ($file != '.' && $file != '..') {
-          $filePath = $dir . '/' . $file;
-
-          if (is_dir($filePath)) {
-              $subDirRecentFiles = getMostRecentFiles($filePath);
-              $recentFiles = array_merge($recentFiles, $subDirRecentFiles);
-          } else {
-              $fileTimestamp = filemtime($filePath);
-              $recentFiles[] = ['file' => $filePath, 'timestamp' => $fileTimestamp];
+    function getFilesWithLargestNumber($dir) {
+      $files = scandir($dir);
+      $filesWithLargestNumber = [];
+  
+      foreach ($files as $file) {
+          if ($file != '.' && $file != '..') {
+              $filePath = $dir . '/' . $file;
+  
+              if (is_dir($filePath)) {
+                  $subDirFilesWithLargestNumber = getFilesWithLargestNumber($filePath);
+                  $filesWithLargestNumber = array_merge($filesWithLargestNumber, $subDirFilesWithLargestNumber);
+              } else {
+                  $number = extractNumberFromFileName($file);
+                  if ($number !== false) {
+                      $filesWithLargestNumber[] = ['file' => $filePath, 'number' => $number];
+                  }
+              }
           }
       }
+  
+      // Sort the files by the largest number in their names in descending order
+      usort($filesWithLargestNumber, function($a, $b) {
+          return $b['number'] - $a['number'];
+      });
+  
+      return $filesWithLargestNumber;
   }
-
-  // Sort the files by timestamp in descending order
-  usort($recentFiles, function($a, $b) {
-      return $b['timestamp'] - $a['timestamp'];
-  });
-
-  return $recentFiles;
-}
-
-$folder = 'repacks/';
-$recentFiles = getMostRecentFiles($folder, 5);
-
-if (!empty($recentFiles)) {
-    echo "<ul>";
-    foreach ($recentFiles as $fileInfo) {
-        $filename = basename($fileInfo['file']);
-        $fileLink = $fileInfo['file'];
-        $lastModified = date('Y-m-d H:i:s', $fileInfo['timestamp']);
-
-        echo "<li><a href=\"$fileLink\" target=\"_blank\">$filename</a><br>";
-
-        $parts = explode("/", $fileLink);
-        
-        // Assuming "DATA" is always the third part of the exploded string
-        if (count($parts) >= 3) {
-            $data = $parts[2];
-            echo "<span class='descarch'>$lastModified - $data</span></li>"; // This will output "DATA"
-        } else {
-            echo "DATA not found in the string.</li>";
-        }
-    }
-    echo "</ul>";
-} else {
-    echo "No files found in '$folder'.<br>";
-}
+  
+  
+  $folder = 'repacks/';
+  $filesWithLargestNumber = getFilesWithLargestNumber($folder);
+  
+  if (!empty($filesWithLargestNumber)) {
+      echo "<ul>";
+      foreach ($filesWithLargestNumber as $fileInfo) {
+          $filename = basename($fileInfo['file']);
+          $fileLink = $fileInfo['file'];
+  
+          $parts = explode("/", $fileLink);
+          // Assuming "DATA" is always the third part of the exploded string
+          if (count($parts) >= 3) {
+              $data = $parts[2];
+              echo "<li><a href=\"$fileLink\" target=\"_blank\">$filename</a><br>";
+              echo "<span class='descarch'>$data</span></li>";
+          } else {
+              echo "DATA not found in the string.</li>";
+          }
+      }
+      echo "</ul>";
+  } else {
+      echo "No files with numbers found in '$folder'.<br>";
+  }
+  
 ?>
 
     </div>
