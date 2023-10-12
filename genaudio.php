@@ -34,10 +34,9 @@
 
 
       .navbar img {
-         height: 120px;
+        height: 120px;
          display: block;
          border-radius: 15px;
-
       }
 
       .latest {
@@ -86,7 +85,7 @@
   </head>
   <body>
     <div class="navbar">
-      <a href="#">FitJKM Repacks</a>
+      <a href="#">FitJKM Repacks - Audio Zone</a>
       <table>
       <tr>
           <th>      
@@ -95,14 +94,14 @@
         </tr>
         <tr>
           <th>     
-            <a href="audio.html" id="audio">Audio Zone</a>
+            <a href="index.html" id="audio">Normal Zone</a>
           </th>
         </tr>
         
       </table>
     </div>
     <div class="latest">
-      <h1>LATEST REPACK!</h1>
+      <h1>LATEST AUDIO REPACK!</h1>
      <?php
 function getFileWithLargestNumber($dir) {
   $files = scandir($dir);
@@ -141,7 +140,7 @@ function extractNumberFromFileName($fileName) {
   return false;
 }
 
-$folder = 'repacks/';
+$folder = 'audios/';
 $mostRecent = getFileWithLargestNumber($folder);
 
 if (!empty($mostRecent['file'])) {
@@ -196,7 +195,7 @@ if (!empty($mostRecent['file'])) {
   }
   
   
-  $folder = 'repacks/';
+  $folder = 'audios/';
   $filesWithLargestNumber = getFilesWithLargestNumber($folder);
   
   if (!empty($filesWithLargestNumber)) {
