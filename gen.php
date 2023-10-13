@@ -91,7 +91,7 @@
       <table>
       <tr>
 	  <th>      
-	    <img src="budgiesIA.jpeg" alt="jkm">
+	    <img src="budgiesIA.jpeg" alt="jkm" onclick="easteregg()" id="jkmimg">
 	  </th>
 	</tr>
 	<tr>
@@ -224,5 +224,16 @@ if (!empty($filesWithLargestNumber)) {
 ?>
 
     </div>
+	<script>
+		function easteregg() {
+			const img = document.getElementById('jkmimg');
+			img.src = "lob.jpg";
+			let audio = new Audio("secret.mp3");
+			audio.play();
+			audio.onended = function() {
+				img.src = "budgiesIA.jpeg";
+			}
+		}
+		</script>
   </body>
 </html>
