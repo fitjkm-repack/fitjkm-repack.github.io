@@ -1,6 +1,7 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap" rel="stylesheet">
+    <title>FitJKM Repacks - Audio Zone</title>
     <style>
       * {
         margin: 0;
