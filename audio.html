@@ -1,7 +1,7 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/jpeg" href="budgiesIA.jpeg"/>
+    <link rel="icon" type="image/png" href="fitjkm-icon-extracted.png"/>
     <title>FitJKM Repacks - Audio Zone</title>
     <style>
       * {
