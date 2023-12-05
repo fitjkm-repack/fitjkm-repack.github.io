@@ -55,8 +55,11 @@
 	font-size: 14px;
       }
 
+	  #aiimage {
+		margin-top: 50px;
+	  }
       .archive {
-	margin-top: 300px;
+	margin-top: 50px;
 	margin-left: 20px;
       }
 
@@ -164,6 +167,8 @@ if (!empty($mostRecent['file'])) {
 	echo "No files found in '$folder'.<br>";
 }
 ?>
+	<br>
+	<img src="image.png" id="aiimage">
     </div>
     <div class="archive">
 	<h2>Archive</h2>
