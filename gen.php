@@ -159,7 +159,7 @@ if (!empty($mostRecent['file'])) {
 	$filename = basename($mostRecent['file']);
 	$fileLink = $mostRecent['file'];
 	$encodedLink = urlencode($fileLink);
-	echo "<a href=\"display.html?file=$encodedLink\" target=\"_blank\">$filename</a> - <a href=\"$fileLink\" target=\"_blank\">download</a><br>";
+	echo "<a href=\"https://docs.google.com/viewerng/viewer?url=https://fitjkm-repack.github.io/$fileLink\" target=\"_blank\">$filename</a> - <a href=\"$fileLink\" target=\"_blank\">download</a><br>";
 	$parts = explode("/", $fileLink);
 // window.location.href = "pagina_destinazione.html?messaggio=" + encodeURIComponent(tuaStringa);
 	// Assuming "DATA" is always the third part of the exploded string
@@ -228,7 +228,7 @@ if (!empty($filesWithLargestNumber)) {
 
 			$encodedLink = urlencode($fileLink);
 			//echo "<li><a href=\"$fileLink\" target=\"_blank\">$filename</a><br>";
-			echo "<li><a href=\"display.html?file=$encodedLink\" target=\"_blank\">$filename</a> - <a href=\"$fileLink\" target=\"_blank\">download</a> <br>";
+			echo "<li><a href=\"https://docs.google.com/viewerng/viewer?url=https://fitjkm-repack.github.io/$fileLink\" target=\"_blank\">$filename</a> - <a href=\"$fileLink\" target=\"_blank\">download</a> <br>";
 			echo "<span class='descarch'>$data</span></li>";
 		} else {
 			echo "DATA not found in the string.</li>";
