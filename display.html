@@ -1,0 +1,29 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%
+        }
+        </style>
+</head>    
+
+    <body>
+        <div id="display"></div>
+        <script>
+            function setFile() {
+                var urlParams = new URLSearchParams(window.location.search);
+                var file = urlParams.get('file');
+                document.getElementById("display").innerHTML = "<iframe src='"+ file +"' frameborder='0'></iframe>";
+            }
+
+            setFile();
+            
+        </script>
+    </body>
+</html>

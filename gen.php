@@ -154,13 +154,14 @@ function extractNumberFromFileName($fileName) {
 $folder = 'repacks/';
 $mostRecent = getFileWithLargestNumber($folder);
 
+
 if (!empty($mostRecent['file'])) {
 	$filename = basename($mostRecent['file']);
 	$fileLink = $mostRecent['file'];
-
-	echo "<a href=\"$fileLink\" target=\"_blank\">$filename</a><br>";
+	$encodedLink = urlencode($fileLink);
+	echo "<a href=\"display.html?file=$encodedLink\" target=\"_blank\">$filename</a> - <a href=\"$fileLink\" target=\"_blank\">download</a><br>";
 	$parts = explode("/", $fileLink);
-
+// window.location.href = "pagina_destinazione.html?messaggio=" + encodeURIComponent(tuaStringa);
 	// Assuming "DATA" is always the third part of the exploded string
 	if (count($parts) >= 3) {
 		$data = $parts[2];
@@ -222,7 +223,12 @@ if (!empty($filesWithLargestNumber)) {
 		// Assuming "DATA" is always the third part of the exploded string
 		if (count($parts) >= 3) {
 			$data = $parts[2];
-			echo "<li><a href=\"$fileLink\" target=\"_blank\">$filename</a><br>";
+			//echo "<a href=\"display.html?file=$encodedLink\" target=\"_blank\">$filename</a><br>";
+			//echo "<a href=\"$fileLink\" style='font-size: 20px;' target=\"_blank\">download</a><br>";
+
+			$encodedLink = urlencode($fileLink);
+			//echo "<li><a href=\"$fileLink\" target=\"_blank\">$filename</a><br>";
+			echo "<li><a href=\"display.html?file=$encodedLink\" target=\"_blank\">$filename</a> - <a href=\"$fileLink\" target=\"_blank\">download</a> <br>";
 			echo "<span class='descarch'>$data</span></li>";
 		} else {
 			echo "DATA not found in the string.</li>";
