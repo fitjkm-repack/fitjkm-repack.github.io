@@ -58,12 +58,30 @@
       .desc {
 	font-size: 20px;
       }
+
+      .storia {
+          color: #F77F00;
+      }
+
+      .tps {
+          color: #0096A3;
+      }
+
+      .sistemi {
+          color: #00aa8d;
+      }
+
+      .italiano {
+          color: #6846bc;
+      }
+
       .descarch {
 	font-size: 14px;
       }
 
 	  #aiimage {
-		margin-top: 50px;
+		margin-top: 100px;
+          border-radius: 20px;
 	  }
 
 	  #sd {
@@ -172,7 +190,7 @@ if (!empty($mostRecent['file'])) {
 	// Assuming "DATA" is always the third part of the exploded string
 	if (count($parts) >= 2) {
 		$data = $parts[1];
-		echo "<span class='desc'>$data</span>"; // This will output "DATA"
+		echo "<span class='desc ${data}'>$data</span>"; // This will output "DATA"
 	} else {
 		echo "DATA not found in the string.";
 	}
@@ -236,7 +254,7 @@ if (!empty($filesWithLargestNumber)) {
 			$encodedLink = urlencode($fileLink);
 			//echo "<li><a href=\"$fileLink\" target=\"_blank\">$filename</a><br>";
 			echo "<li><a href=\"https://docs.google.com/viewerng/viewer?url=https://fitjkm-repack.github.io/$fileLink\" target=\"_blank\">$filename</a> - <a href=\"$fileLink\" target=\"_blank\">download</a> <br>";
-			echo "<span class='descarch'>$data</span></li>";
+			echo "<span class='descarch ${data}'>$data</span></li>";
 		} else {
 			echo "DATA not found in the string.</li>";
 		}
