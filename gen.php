@@ -31,6 +31,10 @@
 	margin-left: 20px;
       }
 
+      #title {
+          text-decoration: none;
+      }
+
       #audio {
 	font-size: 20px;
 	margin: 0
@@ -121,7 +125,7 @@
   </head>
   <body>
     <div class="navbar">
-      <a href="#">FitJKM Repacks</a>
+      <a href="#" id="title">FitJKM Repacks</a>
       <table>
       <tr>
 	  <th>      
