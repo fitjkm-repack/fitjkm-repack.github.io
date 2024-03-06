@@ -21,8 +21,6 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-    position: fixed;
-    width: 100%;
       }
 
       .navbar a {
@@ -48,34 +46,17 @@
 
 
       }
-        /** PC **/
-      @media only screen and (min-width: 701px) {
 
-          .latest {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
+      .latest {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-              padding-top: 200px;
-
-              font-size: 30px;
-              height: 100%;
-          }
+	font-size: 50px;
+    height: 2000px;
       }
 
-      /** MOBILE **/
-      @media only screen and (max-width: 700px) {
-          .latest {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-
-              font-size: 50px;
-              height: 100%;
-          }
-      }
       .desc {
 	font-size: 20px;
       }
@@ -100,22 +81,10 @@
 	font-size: 14px;
       }
 
-      /** PC **/
-      @media only screen and (min-width: 701px) {
-          #aiimage {
-              border-radius: 20px;
-          }
-      }
-
-      /** MOBILE **/
-      @media only screen and (max-width: 700px) {
-          #aiimage {
-              margin-top: 100px;
-              border-radius: 20px;
-          }
-      }
-
-
+	  #aiimage {
+		margin-top: 100px;
+          border-radius: 20px;
+	  }
 
 	  #sd {
 		font-size: 16px;
@@ -217,7 +186,7 @@ if (!empty($mostRecent['file'])) {
 	$filename = basename($mostRecent['file']);
 	$fileLink = $mostRecent['file'];
 	$encodedLink = urlencode($fileLink);
-	echo "<a href=\"https://docs.google.com/viewerng/viewer?url=https://fitjkm-repack.github.io/$fileLink\" target=\"_blank\">$filename</a><a href=\"$fileLink\" target=\"_blank\">download</a>";
+	echo "<a href=\"https://docs.google.com/viewerng/viewer?url=https://fitjkm-repack.github.io/$fileLink\" target=\"_blank\">$filename</a><br><a href=\"$fileLink\" target=\"_blank\">download</a><br>";
 	$parts = explode("/", $fileLink);
 // window.location.href = "pagina_destinazione.html?messaggio=" + encodeURIComponent(tuaStringa);
 	// Assuming "DATA" is always the third part of the exploded string
@@ -310,6 +279,19 @@ if (!empty($filesWithLargestNumber)) {
 				img.src = "budgiesIA.jpeg";
 			}
 		}
-		</script>
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // Code to execute if the user is on a phone
+
+        } else {
+            // Code for other devices
+            //zoom: 0.5;
+            //-moz-transform: scale(0.5);
+            //-moz-transform-origin: 50% 0;
+            document.body.style.zoom = "0.5";
+            document.body.style.MozTransform = "scale(0.5)";
+            document.body.style.MozTransformOrigin = "50% 0";
+        }
+    </script>
   </body>
 </html>
