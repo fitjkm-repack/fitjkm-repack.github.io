@@ -48,17 +48,34 @@
 
 
       }
+        /** PC **/
+      @media only screen and (min-width: 601px) {
 
-      .latest {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+          .latest {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
 
-	font-size: 50px;
-    height: 100%;
+              padding-top: 200px;
+
+              font-size: 30px;
+              height: 100%;
+          }
       }
 
+      /** MOBILE **/
+      @media only screen and (max-width: 600px) {
+          .latest {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              font-size: 50px;
+              height: 100%;
+          }
+      }
       .desc {
 	font-size: 20px;
       }
@@ -83,10 +100,22 @@
 	font-size: 14px;
       }
 
-	  #aiimage {
-		margin-top: 100px;
-          border-radius: 20px;
-	  }
+      /** PC **/
+      @media only screen and (min-width: 601px) {
+          #aiimage {
+              border-radius: 20px;
+          }
+      }
+
+      /** MOBILE **/
+      @media only screen and (max-width: 600px) {
+          #aiimage {
+              margin-top: 100px;
+              border-radius: 20px;
+          }
+      }
+
+
 
 	  #sd {
 		font-size: 16px;
@@ -188,7 +217,7 @@ if (!empty($mostRecent['file'])) {
 	$filename = basename($mostRecent['file']);
 	$fileLink = $mostRecent['file'];
 	$encodedLink = urlencode($fileLink);
-	echo "<a href=\"https://docs.google.com/viewerng/viewer?url=https://fitjkm-repack.github.io/$fileLink\" target=\"_blank\">$filename</a><br><a href=\"$fileLink\" target=\"_blank\">download</a><br>";
+	echo "<a href=\"https://docs.google.com/viewerng/viewer?url=https://fitjkm-repack.github.io/$fileLink\" target=\"_blank\">$filename</a><a href=\"$fileLink\" target=\"_blank\">download</a>";
 	$parts = explode("/", $fileLink);
 // window.location.href = "pagina_destinazione.html?messaggio=" + encodeURIComponent(tuaStringa);
 	// Assuming "DATA" is always the third part of the exploded string
