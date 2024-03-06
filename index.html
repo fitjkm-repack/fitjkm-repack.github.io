@@ -49,7 +49,7 @@
 
       }
         /** PC **/
-      @media only screen and (min-width: 601px) {
+      @media only screen and (min-width: 701px) {
 
           .latest {
               display: flex;
@@ -65,7 +65,7 @@
       }
 
       /** MOBILE **/
-      @media only screen and (max-width: 600px) {
+      @media only screen and (max-width: 700px) {
           .latest {
               display: flex;
               flex-direction: column;
@@ -101,14 +101,14 @@
       }
 
       /** PC **/
-      @media only screen and (min-width: 601px) {
+      @media only screen and (min-width: 701px) {
           #aiimage {
               border-radius: 20px;
           }
       }
 
       /** MOBILE **/
-      @media only screen and (max-width: 600px) {
+      @media only screen and (max-width: 700px) {
           #aiimage {
               margin-top: 100px;
               border-radius: 20px;
