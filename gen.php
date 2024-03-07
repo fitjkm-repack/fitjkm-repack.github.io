@@ -44,7 +44,6 @@
 	 display: block;
 	 border-radius: 15px;
 
-
       }
 
       .latest {
@@ -54,11 +53,12 @@
     align-items: center;
 
 	font-size: 50px;
-    height: 2000px;
+    height: 1400px;
+          padding-bottom: 600px;
       }
 
       .desc {
-	font-size: 20px;
+	font-size: 40px;
       }
 
       .storia {
@@ -66,7 +66,7 @@
       }
 
       .tps {
-          color: #0096A3;
+          color: #6ec8d7;
       }
 
       .sistemi {
@@ -74,11 +74,14 @@
       }
 
       .italiano {
-          color: #6846bc;
+          color: #a082e1;
       }
 
+      .archivelink {
+          font-size: 30px;
+      }
       .descarch {
-	font-size: 14px;
+	font-size: 30px;
       }
 
 	  #aiimage {
@@ -87,13 +90,16 @@
 	  }
 
 	  #sd {
-		font-size: 16px;
+		font-size: 25px;
+          margin-top: 10px;
 	  }
 
       .archive {
 	margin-top: 50px;
 	margin-left: 20px;
       }
+
+
 
       h1 {
 	background: linear-gradient(to right, #6846bc 20%, #00aa8d 40%, #00aa8d 60%, #6846bc 80%);
@@ -107,6 +113,13 @@
 
 	animation: shine 5s linear infinite;
     }
+
+      h2 {
+          font-size: 50px;
+          text-align: center;
+          margin-bottom: 70px;
+          border-top: white 2px solid;
+      }
 	@keyframes shine {
 	    to {
 		background-position: 200% center;
@@ -186,13 +199,13 @@ if (!empty($mostRecent['file'])) {
 	$filename = basename($mostRecent['file']);
 	$fileLink = $mostRecent['file'];
 	$encodedLink = urlencode($fileLink);
-	echo "<a href=\"https://docs.google.com/viewerng/viewer?url=https://fitjkm-repack.github.io/$fileLink\" target=\"_blank\">$filename</a><br><a href=\"$fileLink\" target=\"_blank\">download</a><br>";
+	echo "<a href=\"https://docs.google.com/viewerng/viewer?url=https://fitjkm-repack.github.io/$fileLink\" target=\"_blank\">$filename</a><a href=\"$fileLink\" target=\"_blank\">download</a>";
 	$parts = explode("/", $fileLink);
 // window.location.href = "pagina_destinazione.html?messaggio=" + encodeURIComponent(tuaStringa);
 	// Assuming "DATA" is always the third part of the exploded string
 	if (count($parts) >= 2) {
 		$data = $parts[1];
-		echo "<span class='desc ${data}'>$data</span>"; // This will output "DATA"
+		echo "<span class='desc {$data}'>$data</span>"; // This will output "DATA"
 	} else {
 		echo "DATA not found in the string.";
 	}
@@ -255,8 +268,8 @@ if (!empty($filesWithLargestNumber)) {
 
 			$encodedLink = urlencode($fileLink);
 			//echo "<li><a href=\"$fileLink\" target=\"_blank\">$filename</a><br>";
-			echo "<li><a href=\"https://docs.google.com/viewerng/viewer?url=https://fitjkm-repack.github.io/$fileLink\" target=\"_blank\">$filename</a> - <a href=\"$fileLink\" target=\"_blank\">download</a> <br>";
-			echo "<span class='descarch ${data}'>$data</span></li>";
+			echo "<li class='archivelink' ><a href=\"https://docs.google.com/viewerng/viewer?url=https://fitjkm-repack.github.io/$fileLink\" target=\"_blank\">$filename</a> - <a href=\"$fileLink\" target=\"_blank\">download</a> <br>";
+			echo "<span class='descarch {$data}'>$data</span></li>";
 		} else {
 			echo "DATA not found in the string.</li>";
 		}
