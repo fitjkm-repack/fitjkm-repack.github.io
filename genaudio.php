@@ -203,7 +203,7 @@
         $filename = basename($mostRecent['file']);
         $fileLink = $mostRecent['file'];
         $encodedLink = urlencode($fileLink);
-        echo "<audio controls src=\"$fileLink\"></audio><a href=\"$fileLink\" target=\"_blank\">download</a>";
+        echo "<audio controls src=\"$fileLink\"></audio> $filename <a href=\"$fileLink\" target=\"_blank\">download</a>";
         $parts = explode("/", $fileLink);
 // window.location.href = "pagina_destinazione.html?messaggio=" + encodeURIComponent(tuaStringa);
         // Assuming "DATA" is always the third part of the exploded string
@@ -270,7 +270,7 @@
 
                 $encodedLink = urlencode($fileLink);
                 //echo "<li><a href=\"$fileLink\" target=\"_blank\">$filename</a><br>";
-                echo "<li class='archivelink' ><audio controls src=\"$fileLink\"></audio> - <a href=\"$fileLink\" target=\"_blank\">download</a> <br>";
+                echo "<li class='archivelink' ><audio controls src=\"$fileLink\"></audio> $filename - <a href=\"$fileLink\" target=\"_blank\">download</a> <br>";
                 echo "<span class='descarch {$data}'>$data</span></li>";
             } else {
                 echo "DATA not found in the string.</li>";
