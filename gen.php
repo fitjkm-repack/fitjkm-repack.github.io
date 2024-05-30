@@ -2,7 +2,7 @@
   <head>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="fitjkm-icon-extracted.png"/>
-    <title>FitJKM Repacks - Normal Zone</title>
+    <title>FitJKM Repacks</title>
     <style>
       * {
 	margin: 0;
@@ -107,6 +107,10 @@
       .archive {
 		margin-top: 50px;
       }
+	  
+	  .archive h2 {
+		padding-top: 20px;
+	  }
 
 	  .content {
 		padding: 20px;
@@ -146,7 +150,8 @@
 	  }
 
       footer {
-          padding: 100px;
+          padding-top: 100px;
+		  padding: 20px;
           text-align: center;
           font-size: 30px;
           border-top: 1px solid #fff;
