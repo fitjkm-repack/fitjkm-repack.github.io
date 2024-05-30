@@ -150,7 +150,7 @@
 	  }
 
       footer {
-		  padding: 100px 20px;
+		  padding: 100px 0;
 		  display: flex;
 		  justify-content: center;
           font-size: 20px;
@@ -165,7 +165,7 @@
 	  }
 
 	  .footer-content {
-
+		padding: 0 20px
 	  }
 
     </style>
