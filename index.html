@@ -150,8 +150,7 @@
 	  }
 
       footer {
-          padding-top: 100px;
-		  padding: 20px;
+		  padding: 100px 20px;
           text-align: center;
           font-size: 30px;
           border-top: 1px solid #fff;
