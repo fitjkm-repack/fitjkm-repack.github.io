@@ -152,7 +152,7 @@
       footer {
 		  padding: 100px 20px;
           text-align: center;
-          font-size: 20px;
+          font-size: 15px;
           border-top: 1px solid #fff;
           margin-top: 100px;
       }
@@ -312,7 +312,7 @@ if (!empty($filesWithLargestNumber)) {
     <footer id="footer">
 	<p><b>Note:</b> Questi appunti sono del quarto e quinto anno di informatica</p>
 	<p>Se ci sono problemi o comunque errori da correggere scrivete a <a href="mailto:beastdune88@proton.me">beastdune88@proton.me</a></p>
-	<p>Per chi è interessato a leggere il codice del sito: <a href="https://github.com/fitjkm-repack/fitjkm-repack.github.io">fitjkm-repack</a></p><br><br>
+	<p>Per chi è interessato a leggere il codice del sito è su Github: <a href="https://github.com/fitjkm-repack/fitjkm-repack.github.io">fitjkm-repack</a></p><br><br>
 
         <p>♥ Gli appunti sono stati fatti con amore e sudore da FunnySuperst56 ♥</p>
         <p><i>“I'm sad, but at the same time, I'm really happy that something can make me feel that sad.”</i></p>
