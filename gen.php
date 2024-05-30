@@ -94,7 +94,7 @@
 	  }
 
       .imagecit {
-          margin-bottom: 100px;
+          margin-bottom: 150px;
           margin-top: 50px;
           border-radius: 20px;
       }
@@ -105,9 +105,12 @@
 	  }
 
       .archive {
-	margin-top: 50px;
-	margin-left: 20px;
+		margin-top: 50px;
       }
+
+	  .content {
+		padding: 20px;
+	  }
 
 
 
@@ -237,6 +240,8 @@ if (!empty($mostRecent['file'])) {
     </div>
     <div class="archive">
 	<h2>Archive</h2>
+
+	<div class="content">
 <?php
 
 function getFilesWithLargestNumber($dir) {
@@ -298,16 +303,20 @@ if (!empty($filesWithLargestNumber)) {
 }
 
 ?>
-
+	</div>
     </div>
     <footer id="footer">
+	<p><b>Note:</b> Questi appunti sono del quarto e quinto anno di informatica</p>
+	<p>Se ci sono problemi o comunque errori da correggere scrivete a <a href="mailto:beastdune88@proton.me">beastdune88@proton.me</a></p>
+	<p>Per chi è interessato a leggere il codice del sito: <a href="https://github.com/fitjkm-repack/fitjkm-repack.github.io">fitjkm-repack</a></p><br><br>
+
         <p>♥ Gli appunti sono stati fatti con amore e sudore da FunnySuperst56 ♥</p>
         <p><i>“I'm sad, but at the same time, I'm really happy that something can make me feel that sad.”</i></p>
         <img src="sad.gif" class="imagecit" alt="imagecit">
-        <p>♥ Il sito invece è stato sviluppato da OrangeXarot con molto odio /s ♥</p>
-        <p><i>“è meglio non sapere e sapere di non sapere, che sapere e avere ansia di non sapere.”</i></p>
+        <p>♥ Il sito è possibile grazie a OrangeXarot, quel pazzo maniaco ♥</p>
+        <p><i>“È meglio non sapere e sapere di non sapere, che sapere e avere ansia di non sapere.”</i></p>
         <img src="tboi.gif" class="imagecit" alt="imagecit">
-        <p>Se ci sono problemi o comunque errori da correggere scrivete a <a href="mailto:beastdune88@proton.me">beastdune88@proton.me\</a></p>
+        
     </footer>
 	<script>
 		function easteregg() {
