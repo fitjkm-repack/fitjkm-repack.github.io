@@ -117,6 +117,9 @@
 		padding: 20px;
 	  }
 
+	  i {
+		opacity: 0.8;
+	  }
 
 
       h1 {
