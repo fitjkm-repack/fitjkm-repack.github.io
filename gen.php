@@ -155,7 +155,7 @@
 		  display: flex;
 		  justify-content: center;
           font-size: 20px;
-          border-top: 1px solid #fff;
+          border-top: 2px solid #fff;
           margin-top: 100px;
       }
 
