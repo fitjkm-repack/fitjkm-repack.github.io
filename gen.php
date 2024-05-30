@@ -240,6 +240,7 @@ if (!empty($mostRecent['file'])) {
 	$filename = basename($mostRecent['file']);
 	$fileLink = $mostRecent['file'];
 	$encodedLink = urlencode($fileLink);
+	
 	echo "<a href=\"https://docs.google.com/viewerng/viewer?url=https://fitjkm-repack.github.io/$fileLink\" target=\"_blank\">$filename</a><a href=\"$fileLink\" target=\"_blank\">download</a>";
 	$parts = explode("/", $fileLink);
 // window.location.href = "pagina_destinazione.html?messaggio=" + encodeURIComponent(tuaStringa);
@@ -329,6 +330,7 @@ if (!empty($filesWithLargestNumber)) {
 		<div class="footer-content">
 			<h2>Informazioni</h2>
 	<p><b>Note:</b> Questi appunti sono del quarto e quinto anno di informatica.</p><br>
+	<p>Se avete problemi con il caricamento del documento, google fa schifo, quindi dovete riaprirlo oppure scaricarlo.</p><br>
 	<p>Se ci sono problemi o comunque errori da correggere scrivete a <a href="mailto:beastdune88@proton.me">beastdune88@proton.me</a>.</p><br>
 	<p>Per chi è interessato a leggere il codice del sito è su Github: <a href="https://github.com/fitjkm-repack/fitjkm-repack.github.io">fitjkm-repack</a>.</p><br><br><br><br>
 
