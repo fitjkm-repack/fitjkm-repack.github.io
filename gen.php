@@ -332,7 +332,7 @@ if (!empty($filesWithLargestNumber)) {
 	<p><b>Note:</b> Questi appunti sono del quarto e quinto anno di informatica.</p><br>
 	<p>Se avete problemi con il caricamento del documento, google fa schifo, quindi dovete riaprirlo oppure scaricarlo.</p><br>
 	<p>Se ci sono problemi o errori da correggere scrivete a <a href="mailto:beastdune88@proton.me">beastdune88@proton.me</a> oppure a <a href="mailto:orangexarot@proton.me">orangexarot@proton.me</a>.</p><br>
-	<p>Per chi fosse interessato a leggere il codice del sito, è su Github: <a href="https://github.com/fitjkm-repack/fitjkm-repack.github.io">fitjkm-repack</a>.</p><br><br><br><br>
+	<p>Per chi fosse interessato a leggere il codice del sito, è su Github: <a href="https://github.com/fitjkm-repack/fitjkm-repack.github.io" target="_blank" >fitjkm-repack</a>.</p><br><br><br><br>
 
         <p><span class="italiano">♥</span> Gli appunti sono stati fatti con amore e sudore da <span class="italiano">FunnySuperst56</span>.</p>
         <p><i>“I'm sad, but at the same time, I'm really happy that something can make me feel that sad.”</i></p>
