@@ -330,7 +330,7 @@ if (!empty($filesWithLargestNumber)) {
 		<div class="footer-content">
 			<h2>Details</h2>
 	<p><b>Note:</b> Questi appunti sono del quarto e quinto anno di informatica.</p><br>
-	<p>Se avete problemi con il caricamento del documento, google fa schifo, quindi dovete riaprirlo oppure scaricarlo.</p><br>
+	<p>Se avete problemi con il caricamento del documento, google fa schifo, quindi dovete ricaricare la pagina, riaprirla oppure scaricare il documento.</p><br>
 	<p>Se ci sono problemi o errori da correggere scrivete a <a href="mailto:beastdune88@proton.me">beastdune88@proton.me</a> oppure a <a href="mailto:orangexarot@proton.me">orangexarot@proton.me</a>.</p><br>
 	<p>Per chi fosse interessato a leggere il codice del sito, è su Github: <a href="https://github.com/fitjkm-repack/fitjkm-repack.github.io" target="_blank" >fitjkm-repack</a>.</p><br><br><br><br>
 
